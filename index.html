@@ -77,6 +77,14 @@ header {
 .b7{background:linear-gradient(135deg,#EC407A,#C2185B);} .b8{background:linear-gradient(135deg,#78909C,#455A64);}
 .b9{background:linear-gradient(135deg,#5C6BC0,#3949AB);} .b10{background:linear-gradient(135deg,#8D6E63,#6D4C41);}
 .b11{background:linear-gradient(135deg,#26C6DA,#00ACC1);} .b12{background:linear-gradient(135deg,#D4E157,#AFB42B);}
+.b13{background:linear-gradient(135deg,#FF8A65,#E64A19);}
+.b14{background:linear-gradient(135deg,#7E57C2,#4527A0);}
+.b15{background:linear-gradient(135deg,#26A69A,#00695C);}
+.thought-bubble{background:#FFF8E1;border:3px solid #FFD54F;border-radius:24px 24px 24px 6px;padding:16px 18px;margin:10px 0;font-size:1.12rem;line-height:1.6;position:relative;}
+.thought-who{font-weight:900;color:#E65100;margin-bottom:6px;display:flex;align-items:center;gap:8px;}
+.scene-card{background:#E3F2FD;border:3px dashed #42A5F5;border-radius:18px;padding:16px;margin-bottom:14px;}
+.scene-emoji{font-size:3.2rem;text-align:center;margin-bottom:8px;}
+
 
 /* COMMON INTERIOR */
 .section-header { width: 100%; display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; background: white; padding: 15px 20px; border-radius: 15px; box-shadow: var(--shadow); flex-wrap: wrap; gap: 10px; border-left: 6px solid var(--primary);}
@@ -228,15 +236,15 @@ header {
                 </button>
                 <button class="btn-menu b10" onclick="openChoose('thought')">
                     <span style="font-size:1.8rem;">💭</span><span>3. Character's Thoughts</span>
-                    <span class="ml-title">ചിന്തകൾ എഴുതാം</span>
+                    <span class="ml-title">കഥാപാത്രങ്ങളുടെ ചിന്തകൾ</span>
                 </button>
                 <button class="btn-menu b9" onclick="openChoose('conversation')">
                     <span style="font-size:1.8rem;">🗣️</span><span>4. Role Play Zone</span>
-                    <span class="ml-title">സംഭാഷണങ്ങൾ</span>
+                    <span class="ml-title">സംഭാഷണങ്ങൾ അഭിനയിക്കാം</span>
                 </button>
                 <button class="btn-menu b12" onclick="openChoose('description')">
                     <span style="font-size:1.8rem;">🖼️</span><span>5. Describe the Scene</span>
-                    <span class="ml-title">ചിത്രവിവരണം</span>
+                    <span class="ml-title">രംഗങ്ങൾ വിവരിക്കാം</span>
                 </button>
                 <button class="btn-menu b4" onclick="openChoose('rhyme')">
                     <span style="font-size:1.8rem;">🎵</span><span>6. Rhyme Time</span>
@@ -254,15 +262,32 @@ header {
                     <span style="font-size:1.8rem;">📝</span><span>9. Grammar Quest</span>
                     <span class="ml-title">വ്യാകരണം പഠിക്കാം</span>
                 </button>
+                <button class="btn-menu b14" onclick="openChoose('diary')">
+                    <span style="font-size:1.8rem;">📔</span><span>10. My Little Diary</span>
+                    <span class="ml-title">ഡയറി എഴുതാം</span>
+                </button>
+                <button class="btn-menu b13" onclick="openChoose('values')">
+                    <span style="font-size:1.8rem;">💛</span><span>11. Values &amp; Moral</span>
+                    <span class="ml-title">മൂല്യങ്ങളും പാഠവും</span>
+                </button>
+                <button class="btn-menu b15" onclick="openChoose('listenfill')">
+                    <span style="font-size:1.8rem;">👂</span><span>12. Listen &amp; Fill</span>
+                    <span class="ml-title">കേട്ട് പൂരിപ്പിക്കാം</span>
+                </button>
+                <button class="btn-menu b7" onclick="openChoose('picturetalk')">
+                    <span style="font-size:1.8rem;">🎨</span><span>13. Picture Talk</span>
+                    <span class="ml-title">ചിത്രം കണ്ട് സംസാരിക്കാം</span>
+                </button>
                 <button class="btn-menu b11" onclick="showScreen('progressScreen')">
-                    <span style="font-size:1.8rem;">📊</span><span>10. My Progress</span>
+                    <span style="font-size:1.8rem;">📊</span><span>14. My Progress</span>
                     <span class="ml-title">പഠന പുരോഗതി</span>
                 </button>
                 <button class="btn-menu b8" onclick="showScreen('modelQPScreen')" style="grid-column: 1 / -1;">
-                    <span style="font-size:1.8rem;">📋</span><span>11. Model Question Paper</span>
+                    <span style="font-size:1.8rem;">📋</span><span>15. Model Question Paper</span>
                     <span class="ml-title">മാതൃകാ ചോദ്യപേപ്പർ</span>
                 </button>
             </div>
+</div>
         </div>
     </div>
 
@@ -485,7 +510,8 @@ const SECTION_TITLES = {
     read: '📖 Read the Lessons', learn: '🗂️ Learn Words', activities: '📝 Activities', 
     games: '🎮 Games', quiz: '❓ Quiz', vocab: '📚 Vocabulary',
     conversation: '🗣️ Role Play Zone', description: '🖼️ Describe the Scene', thought: '💭 Character\'s Thoughts', 
-    progress: '📊 My Progress', rhyme: '🎵 Rhyme Time', grammar: '📝 Grammar Quest'
+    progress: '📊 My Progress', rhyme: '🎵 Rhyme Time', grammar: '📝 Grammar Quest',
+    diary: '📔 My Little Diary', values: '💛 Values & Moral', listenfill: '👂 Listen & Fill', picturetalk: '🎨 Picture Talk'
 };
 
 const TEXT_DATA = {
@@ -581,13 +607,23 @@ const QUIZ_DATA = {
         { q: "Who snatched the bone from Rocky?", opts: ["The cat", "The crow", "The squirrel"], ans: 1 },
         { q: "What did Rocky save from under the fallen branch?", opts: ["The cat", "The squirrel", "The mother crow"], ans: 2 },
         { q: "Where was the crow's nest?", opts: ["On the ground", "On the tree", "Under the bush"], ans: 1 },
-        { q: "How did the chicks feel in the rain?", opts: ["They were happy", "They were shivering", "They were sleeping"], ans: 1 }
+        { q: "How did the chicks feel in the rain?", opts: ["They were happy", "They were shivering", "They were sleeping"], ans: 1 },
+        { q: "What did Rocky get on the way back?", opts: ["A ball", "A bone", "A flower"], ans: 1 },
+        { q: "Why did Rocky help the crow?", opts: ["He felt pity", "He wanted the bone", "The king ordered him"], ans: 0 }
     ],
     stronger: [
         { q: "What were the sun and wind arguing about?", opts: ["Their colour", "Their strength", "Their height"], ans: 1 },
         { q: "Who tried to take off the man's shirt first?", opts: ["The sun", "The wind", "The rain"], ans: 1 },
         { q: "Who made the man take off his shirt?", opts: ["The wind", "The sun", "The crow"], ans: 1 },
-        { q: "How did they live at the end?", opts: ["Fighting", "In harmony", "In sadness"], ans: 1 }
+        { q: "How did they live at the end?", opts: ["Fighting", "In harmony", "In sadness"], ans: 1 },
+        { q: "What did the man say when the wind blew?", opts: ["How cold it is!", "How hot it is!", "How dark it is!"], ans: 0 },
+        { q: "The sun made the man feel...", opts: ["cold", "hot", "hungry"], ans: 1 }
+    ],
+    happiness: [
+        { q: "A seed is happy when it becomes a...", opts: ["flower", "root", "leaf"], ans: 1 },
+        { q: "A bud is happy when it becomes a...", opts: ["stem", "seed", "cloud"], ans: 0 },
+        { q: "A stem is happy when it becomes a...", opts: ["root", "flower", "stone"], ans: 1 },
+        { q: "The poem Happiness is about...", opts: ["growing step by step", "running fast", "hiding bones"], ans: 0 }
     ]
 };
 
@@ -605,6 +641,12 @@ const SEQ_EVENTS = {
         { text: "The wind tried to blow away the man's shirt.", order: 3 },
         { text: "The sun started blazing and the man took off his shirt.", order: 4 },
         { text: "They agreed they are both strong and lived in harmony.", order: 5 }
+    ],
+    happiness: [
+        { text: "A seed becomes a root.", order: 1 },
+        { text: "A root becomes a bud.", order: 2 },
+        { text: "A bud becomes a stem.", order: 3 },
+        { text: "A stem becomes a flower.", order: 4 }
     ]
 };
 
@@ -871,6 +913,10 @@ function renderContentFor(section, lessonId) {
     else if(section === 'rhyme') renderRhyme(body, lessonId);
     else if(section === 'quiz') renderQuiz(body, lessonId);
     else if(section === 'grammar') renderGrammar(body, lessonId);
+    else if(section === 'diary') renderDiary(body, lessonId);
+    else if(section === 'values') renderValues(body, lessonId);
+    else if(section === 'listenfill') renderListenFill(body, lessonId);
+    else if(section === 'picturetalk') renderPictureTalk(body, lessonId);
     
     showScreen('contentScreen');
 }
@@ -909,13 +955,45 @@ function readSingle(i, text) { stopReading(); const el = document.getElementById
 
 function renderVocab(body, lessonId) {
     const vocab = VOCAB_DATA[lessonId] || [];
-    body.innerHTML = `<div class="ml" style="text-align:center; color:#666; margin-bottom:15px;">വാക്കുകളിൽ തൊട്ട് ഉച്ചാരണം കേൾക്കൂ.</div><div class="cards-grid" id="vocabGrid"></div>`;
+    const sentences = {
+        rocky: [
+            {w:'Puppy', s:'Rocky is a small puppy.'},
+            {w:'Crow', s:'The crow snatched the bone.'},
+            {w:'Nest', s:'The nest fell down in the rain.'},
+            {w:'Bone', s:'Rocky sat on the grass and chewed a bone.'}
+        ],
+        stronger: [
+            {w:'Sun', s:'The sun made everything warm.'},
+            {w:'Wind', s:'The wind tried to blow the shirt away.'},
+            {w:'Shirt', s:'The man held on to his shirt.'},
+            {w:'Hot', s:'The day became hot when the sun blazed.'}
+        ],
+        happiness: [
+            {w:'Seed', s:'A seed is happy when it becomes a root.'},
+            {w:'Root', s:'A root grows under the soil.'},
+            {w:'Flower', s:'A stem is happy when it becomes a flower.'}
+        ]
+    };
+    body.innerHTML = `<div class="ml" style="text-align:center; color:#666; margin-bottom:15px;">വാക്കുകളിൽ തൊട്ട് ഉച്ചാരണം കേൾക്കൂ.</div><div class="cards-grid" id="vocabGrid"></div>
+        <div class="activity-block" style="margin-top:20px;"><div class="activity-heading">📝 Use the word in a sentence</div>
+        <div class="activity-sub ml">വാക്ക് കേട്ട് വാക്യം എഴുതുക.</div>
+        <div id="sentBox"></div></div>`;
     const grid = document.getElementById('vocabGrid');
     vocab.forEach(item => {
         const card = document.createElement('div'); card.className = 'word-card';
         card.onclick = () => { speakText(item.en); playSound('click'); };
-        card.innerHTML = `<div class="card-emoji">${item.emoji}</div><div class="word-en">${item.en}</div><div class="word-meaning ml">${item.ml}</div>`;
+        card.innerHTML = `<div class="card-emoji">${item.emoji}</div><div class="word-en">${item.en}</div><div class="word-meaning ml">${item.ml}</div><button class="replay-btn">🔊 Hear</button>`;
         grid.appendChild(card);
+    });
+    const box = document.getElementById('sentBox');
+    (sentences[lessonId]||[]).forEach((it,i)=>{
+        const d=document.createElement('div'); d.className='activity-block'; d.style.background='#fff';
+        d.innerHTML = `<p><strong>${i+1}. ${it.w}</strong> — tap 🔊 then write a sentence.</p>
+            <button class="mini-play" style="width:auto;padding:6px 12px;border-radius:12px;" onclick="speakText('${it.w}')">🔊 ${it.w}</button>
+            <textarea class="textarea-custom" placeholder="Write a sentence with ${it.w}..."></textarea>
+            <button class="reveal-model-btn" onclick="toggleModel('vs${i}', this)">💡 Model Sentence</button>
+            <div id="vs${i}" class="model-answer-box">${it.s}</div>`;
+        box.appendChild(d);
     });
 }
 
@@ -923,35 +1001,130 @@ function renderThought(body, lessonId) {
     if(lessonId === 'rocky') {
         body.innerHTML = `
             <div class="activity-block">
-                <div class="activity-heading">💭 Rocky's Thoughts</div>
+                <div class="activity-heading">💭 Example thoughts from the story</div>
+                <div class="activity-sub ml">കഥയിലെ പ്രധാന കഥാപാത്രങ്ങളുടെ ചിന്തകൾ — മാതൃകകൾ വായിക്കുക.</div>
+                <div class="thought-bubble"><div class="thought-who">🐶 Rocky (under the tree)</div>"Bees are buzzing around my head. Please don't irritate me. I just want a short nap after my yummy meal."</div>
+                <div class="thought-bubble"><div class="thought-who">🐶 Rocky (after losing the bone)</div>"Oh, you naughty crow! That bone was mine. I jumped and rolled in the mud. I must calm down."</div>
+                <div class="thought-bubble"><div class="thought-who">🐦 Mother Crow (when the nest fell)</div>"Kraa, kraa... My nest is swaying. My chicks! I must save them. Help me, help me!"</div>
+                <div class="thought-bubble"><div class="thought-who">🐶 Rocky (seeing the chicks)</div>"The little ones are shivering in the rain. I feel pity. Don't worry, dears. I will help."</div>
+                <button class="read-all-btn" onclick="speakText('Rocky thought: The little ones are shivering. I feel pity. I will help them.')">🔊 Hear Rocky's thought</button>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">💭 Write Rocky's thoughts after saving the crow</div>
                 <div class="activity-sub ml">കാക്കയെ രക്ഷിച്ചതിന് ശേഷം റോക്കിയുടെ ചിന്തകൾ എന്താവാം?</div>
-                <p>Rocky saved the mother crow from under the fallen branch. She looked at him with gratitude. What would be Rocky's thoughts?</p>
                 <div class="chip-container">
                     <span class="word-chip" onclick="insertText('tbox', 'I am so happy.')">I am so happy.</span>
                     <span class="word-chip" onclick="insertText('tbox', 'She was naughty earlier.')">She was naughty earlier.</span>
                     <span class="word-chip" onclick="insertText('tbox', 'But she needed help.')">But she needed help.</span>
                     <span class="word-chip" onclick="insertText('tbox', 'I am glad I saved her.')">I am glad I saved her.</span>
+                    <span class="word-chip" onclick="insertText('tbox', 'Now we can be friends.')">Now we can be friends.</span>
                 </div>
                 <textarea id="tbox" class="textarea-custom" placeholder="Rocky's thoughts..."></textarea>
                 <button class="reveal-model-btn" onclick="toggleModel('taT', this)">💡 Model Answer</button>
                 <div id="taT" class="model-answer-box">I am so happy. The crow was naughty earlier and took my bone. But she needed help. The chicks were crying. I am glad I saved her. Now we can be friends.</div>
             </div>
             <div class="activity-block">
-                <div class="activity-heading">💭 Crow's Thoughts</div>
+                <div class="activity-heading">💭 Crow's thoughts</div>
                 <div class="activity-sub ml">റോക്കി തന്നെ രക്ഷിച്ചതിന് ശേഷം കാക്കയുടെ ചിന്തകൾ എഴുതുക.</div>
-                <p>The crow looked at Rocky with gratitude. What would be her thoughts?</p>
-                <textarea class="textarea-custom" placeholder="Crow's thoughts..."></textarea>
+                <div class="chip-container">
+                    <span class="word-chip" onclick="insertText('tbox2', 'I was wrong about Rocky.')">I was wrong about Rocky.</span>
+                    <span class="word-chip" onclick="insertText('tbox2', 'He is very kind.')">He is very kind.</span>
+                    <span class="word-chip" onclick="insertText('tbox2', 'I will never snatch his food again.')">I will never snatch his food again.</span>
+                </div>
+                <textarea id="tbox2" class="textarea-custom" placeholder="Crow's thoughts..."></textarea>
                 <button class="reveal-model-btn" onclick="toggleModel('taC', this)">💡 Model Answer</button>
                 <div id="taC" class="model-answer-box">Oh, I was so wrong about Rocky. I snatched his bone, but he still saved my life. He is very kind. I will never bother him again. He is a true friend.</div>
             </div>
+            <div class="activity-block">
+                <div class="activity-heading">💭 The cat's thoughts</div>
+                <div class="activity-sub ml">അണ്ണാനെ പിന്തുടരുമ്പോൾ പൂച്ചയുടെ ചിന്ത.</div>
+                <textarea class="textarea-custom" placeholder="The cat thought..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('taCat', this)">💡 Model Answer</button>
+                <div id="taCat" class="model-answer-box">Leave me, Rocky! Let me catch the squirrel. Why is this puppy chasing me? I must climb the tree fast.</div>
+            </div>
+        `;
+    } else if(lessonId === 'stronger') {
+        body.innerHTML = `
+            <div class="activity-block">
+                <div class="activity-heading">💭 Example thoughts</div>
+                <div class="activity-sub ml">സൂര്യൻ, കാറ്റ്, മനുഷ്യൻ — അവരുടെ ചിന്തകൾ.</div>
+                <div class="thought-bubble"><div class="thought-who">💨 Wind</div>"Look, I am strong. I can blow away anything. I will blow off that man's shirt."</div>
+                <div class="thought-bubble"><div class="thought-who">☀️ Sun</div>"No... I am stronger than you. Warmth can do what force cannot. Now it is my turn."</div>
+                <div class="thought-bubble"><div class="thought-who">🚶 The man</div>"How cold it is! I must hold my shirt. Wait... now it is hot! What a strange day!"</div>
+                <button class="read-all-btn" onclick="speakText('The sun thought: Warmth can do what force cannot. Now it is my turn.')">🔊 Hear the Sun's thought</button>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">💭 Write the Wind's thoughts after failing</div>
+                <div class="chip-container">
+                    <span class="word-chip" onclick="insertText('wbox', 'I blew as hard as I could.')">I blew as hard as I could.</span>
+                    <span class="word-chip" onclick="insertText('wbox', 'He only held the shirt tighter.')">He only held the shirt tighter.</span>
+                    <span class="word-chip" onclick="insertText('wbox', 'Maybe the Sun is stronger today.')">Maybe the Sun is stronger today.</span>
+                </div>
+                <textarea id="wbox" class="textarea-custom" placeholder="Wind's thoughts..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('taW', this)">💡 Model Answer</button>
+                <div id="taW" class="model-answer-box">I blew as hard as I could. The man only held his shirt tighter. Force did not work. I agree. The Sun is stronger than me today. But I am strong in my own way too.</div>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">💭 Write the Sun's kind reply</div>
+                <textarea class="textarea-custom" placeholder="The Sun thought..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('taS', this)">💡 Model Answer</button>
+                <div id="taS" class="model-answer-box">I did not want to fight. We both have power. You can blow the clouds. I can warm the earth. Let us live in harmony.</div>
+            </div>
         `;
     } else {
-        body.innerHTML = `<div class="activity-block"><div class="activity-heading">💭 Write your thoughts about the story.</div></div>`;
+        body.innerHTML = `
+            <div class="activity-block">
+                <div class="activity-heading">💭 Example thoughts from the poem</div>
+                <div class="thought-bubble"><div class="thought-who">🌱 Seed</div>"I am small now, but I will grow. I will be happy when I become a root."</div>
+                <div class="thought-bubble"><div class="thought-who">🌸 Flower</div>"I was a seed, then a root, a bud and a stem. Every step made me happier."</div>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">💭 What does the seed think?</div>
+                <div class="chip-container">
+                    <span class="word-chip" onclick="insertText('hbox', 'I want to grow.')">I want to grow.</span>
+                    <span class="word-chip" onclick="insertText('hbox', 'One day I will be a flower.')">One day I will be a flower.</span>
+                    <span class="word-chip" onclick="insertText('hbox', 'Each step makes me happy.')">Each step makes me happy.</span>
+                </div>
+                <textarea id="hbox" class="textarea-custom" placeholder="The seed thinks..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('taH', this)">💡 Model Answer</button>
+                <div id="taH" class="model-answer-box">I want to grow. I will be a root, then a bud, then a stem. One day I will be a flower. Each step makes me happy.</div>
+            </div>
+        `;
     }
 }
 
 function renderConversation(body, lessonId) {
-    if(lessonId === 'stronger') {
+    if(lessonId === 'rocky') {
+        body.innerHTML = `
+            <div class="activity-block">
+                <div class="activity-heading">🗣️ Rocky and the Crow</div>
+                <div class="activity-sub ml">റോക്കിയും കാക്കയും തമ്മിലുള്ള സംഭാഷണം പൂർത്തിയാക്കുക.</div>
+                <div class="interactive-dialogue"><div class="speaker-icon">🐦</div><div><strong>Crow:</strong> I am sorry I took your bone.</div></div>
+                <div class="interactive-dialogue"><div class="speaker-icon">🐶</div><div><strong>Rocky:</strong> Your chicks were crying. I had to help.</div></div>
+                <div class="chip-container">
+                    <span class="word-chip" onclick="insertText('c1', 'Thank you, Rocky.')">Thank you, Rocky.</span>
+                    <span class="word-chip" onclick="insertText('c1', 'You are a true friend.')">You are a true friend.</span>
+                    <span class="word-chip" onclick="insertText('c1', 'We can share next time.')">We can share next time.</span>
+                </div>
+                <textarea id="c1" class="textarea-custom" placeholder="Crow: ...&#10;Rocky: ..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('m1', this)">💡 Model Dialogue</button>
+                <div id="m1" class="model-answer-box"><strong>Crow:</strong> I am sorry I took your bone.<br><strong>Rocky:</strong> Your chicks were crying. I had to help.<br><strong>Crow:</strong> Thank you, Rocky. You are a true friend.<br><strong>Rocky:</strong> Take care. We can share next time.</div>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">🗣️ Rocky and the Cat</div>
+                <div class="interactive-dialogue"><div class="speaker-icon">🐈</div><div><strong>Cat:</strong> Leave me, let me catch the squirrel.</div></div>
+                <textarea class="textarea-custom" placeholder="Rocky: ..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('m2', this)">💡 Model Dialogue</button>
+                <div id="m2" class="model-answer-box"><strong>Cat:</strong> Leave me, let me catch the squirrel.<br><strong>Rocky:</strong> I only wanted some fun. I will not chase you now.<br><strong>Cat:</strong> Thank you. Let us play later.</div>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">🗣️ Rocky talks to the chicks</div>
+                <textarea class="textarea-custom" placeholder="Rocky: Don't worry dears..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('m3', this)">💡 Model Dialogue</button>
+                <div id="m3" class="model-answer-box"><strong>Rocky:</strong> Don't worry dears. You are safe now.<br><strong>Chicks:</strong> Keeyo... keeyo. Thank you.<br><strong>Rocky:</strong> Your mother will come. Stay close to me.</div>
+            </div>
+        `;
+    } else if(lessonId === 'stronger') {
         body.innerHTML = `
             <div class="activity-block">
                 <div class="activity-heading">🗣️ Sun and Wind</div>
@@ -961,14 +1134,34 @@ function renderConversation(body, lessonId) {
                     <span class="word-chip" onclick="insertText('cbox', 'No, I am stronger.')">No, I am stronger.</span>
                     <span class="word-chip" onclick="insertText('cbox', 'Let me try now.')">Let me try now.</span>
                     <span class="word-chip" onclick="insertText('cbox', 'I will make him warm.')">I will make him warm.</span>
+                    <span class="word-chip" onclick="insertText('cbox', 'You are strong in your own way.')">You are strong in your own way.</span>
                 </div>
                 <textarea id="cbox" class="textarea-custom" placeholder="Sun: ...&#10;Wind: ..."></textarea>
                 <button class="reveal-model-btn" onclick="toggleModel('taConv', this)">💡 Model Answer</button>
-                <div id="taConv" class="model-answer-box"><strong>Wind:</strong> Look, I am strong. I can blow away his shirt.<br><strong>Sun:</strong> No, I am stronger. Let me try now. I will make him warm.<br><strong>Wind:</strong> Okay, let us see who is stronger.</div>
+                <div id="taConv" class="model-answer-box"><strong>Wind:</strong> Look, I am strong. I can blow away his shirt.<br><strong>Sun:</strong> No, I am stronger. Let me try now. I will make him warm.<br><strong>Wind:</strong> Okay, let us see who is stronger.<br><strong>Sun:</strong> You are strong in your own way too. Let us live in harmony.</div>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">🗣️ The man talks to himself</div>
+                <textarea class="textarea-custom" placeholder="Man: How cold it is!..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('taMan', this)">💡 Model Dialogue</button>
+                <div id="taMan" class="model-answer-box"><strong>Man:</strong> How cold it is! I must hold my shirt tight.<br><strong>Man:</strong> What a strange day! It was cold earlier. Now it is hot!<br><strong>Man:</strong> I will take off my shirt and walk slowly.</div>
             </div>
         `;
     } else {
-        body.innerHTML = `<div class="activity-block"><div class="activity-heading">No conversation activity for this section.</div></div>`;
+        body.innerHTML = `
+            <div class="activity-block">
+                <div class="activity-heading">🗣️ Seed talks to the Flower</div>
+                <div class="interactive-dialogue"><div class="speaker-icon">🌱</div><div><strong>Seed:</strong> Will I ever become like you?</div></div>
+                <div class="chip-container">
+                    <span class="word-chip" onclick="insertText('hc', 'Yes, grow step by step.')">Yes, grow step by step.</span>
+                    <span class="word-chip" onclick="insertText('hc', 'Be a root, then a bud.')">Be a root, then a bud.</span>
+                    <span class="word-chip" onclick="insertText('hc', 'Then you will bloom.')">Then you will bloom.</span>
+                </div>
+                <textarea id="hc" class="textarea-custom" placeholder="Flower: ..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('taHF', this)">💡 Model Dialogue</button>
+                <div id="taHF" class="model-answer-box"><strong>Seed:</strong> Will I ever become like you?<br><strong>Flower:</strong> Yes, grow step by step. Be a root, then a bud, then a stem. Then you will bloom and be happy.</div>
+            </div>
+        `;
     }
 }
 
@@ -978,14 +1171,66 @@ function renderDescription(body, lessonId) {
            <div class="activity-block">
                 <div class="activity-heading">🖼️ Describe Rocky</div>
                 <div class="activity-sub ml">റോക്കിയെ വിവരിക്കുക.</div>
-                <div style="text-align:center; font-size:4rem; margin-bottom:10px;">🐶</div>
+                <div class="scene-emoji">🐶</div>
                 <textarea class="textarea-custom" placeholder="Rocky is..."></textarea>
                 <button class="reveal-model-btn" onclick="toggleModel('taDesc', this)">💡 Model Answer</button>
-                <div id="taDesc" class="model-answer-box">Rocky is a cute little puppy. He likes to rest under the tree. He is very kind. He saved the mother crow from the fallen branch.</div>
+                <div id="taDesc" class="model-answer-box">Rocky is a cute little puppy. He likes to rest under the tree. He is kind and brave. He saved the mother crow from the fallen branch.</div>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">🖼️ The rainy scene</div>
+                <div class="scene-card"><div class="scene-emoji">🌧️🪹</div><p>The sky grew dark. The wind howled. The nest fell. The chicks were shivering.</p></div>
+                <textarea class="textarea-custom" placeholder="It started to rain..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('taRain', this)">💡 Model Answer</button>
+                <div id="taRain" class="model-answer-box">The blue sky grew dark. The wind howled and thunder shook the ground. The nest fell from the tree. The chicks were drenched and shivering. Rocky felt pity and walked towards them.</div>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">🖼️ The palace of kindness</div>
+                <div class="activity-sub ml">റോക്കി കൊമ്പ് നീക്കുന്ന രംഗം വിവരിക്കുക.</div>
+                <textarea class="textarea-custom" placeholder="Rocky tried to move the branch..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('taBr', this)">💡 Model Answer</button>
+                <div id="taBr" class="model-answer-box">The mother crow was caught under a fallen branch. Rocky pulled it with all his strength. At last he moved it and saved her. Her eyes welled up with gratitude.</div>
+            </div>
+        `;
+    } else if(lessonId === 'stronger') {
+        body.innerHTML = `
+            <div class="activity-block">
+                <div class="activity-heading">🖼️ Describe the Wind's try</div>
+                <div class="scene-emoji">💨👕</div>
+                <textarea class="textarea-custom" placeholder="The wind started to blow..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('dW', this)">💡 Model Answer</button>
+                <div id="dW" class="model-answer-box">The wind blew hard. It tried to take away the man's shirt. But the man held on to it tightly and said, "How cold it is!"</div>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">🖼️ Describe the Sun's turn</div>
+                <div class="scene-emoji">☀️</div>
+                <textarea class="textarea-custom" placeholder="The sun started blazing..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('dS', this)">💡 Model Answer</button>
+                <div id="dS" class="model-answer-box">The sun started blazing. The man felt hot. He took off his shirt and said, "What a strange day! It was cold earlier. Now it is hot!"</div>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">🖼️ Living in harmony</div>
+                <textarea class="textarea-custom" placeholder="At the end..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('dH', this)">💡 Model Answer</button>
+                <div id="dH" class="model-answer-box">The wind agreed that the sun was stronger. The sun said the wind was strong in its own way. They lived in harmony thereafter.</div>
             </div>
         `;
     } else {
-        body.innerHTML = `<div class="activity-block"><div class="activity-heading">No description activity for this section.</div></div>`;
+        body.innerHTML = `
+            <div class="activity-block">
+                <div class="activity-heading">🖼️ Describe a tiny seed</div>
+                <div class="scene-emoji">🌱</div>
+                <textarea class="textarea-custom" placeholder="The seed is small..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('dSeed', this)">💡 Model Answer</button>
+                <div id="dSeed" class="model-answer-box">The seed is small and quiet. It is happy when it becomes a root. Then it becomes a bud, a stem and at last a bright flower.</div>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">🖼️ Describe a garden in bloom</div>
+                <div class="scene-emoji">🌸🌳</div>
+                <textarea class="textarea-custom" placeholder="I see flowers..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('dGdn', this)">💡 Model Answer</button>
+                <div id="dGdn" class="model-answer-box">I see green trees and many flowers. A seed has grown step by step. The garden looks happy and bright.</div>
+            </div>
+        `;
     }
 }
 
@@ -996,47 +1241,227 @@ function renderRhyme(body, lessonId) {
                 <div class="activity-heading" style="justify-content:center;">🎵 Happiness</div>
                 <button class="read-all-btn" onclick="speakText('A seed is happy when it becomes a root. A root is happy when it becomes a bud. A bud is happy when it becomes a stem. And a stem is happy when it becomes a flower.')">▶️ Sing Along</button>
                 <div style="font-size:1.3rem; line-height:2; font-weight:bold; background:#E8F5E9; padding:20px; border-radius:15px; border:2px dashed #4CAF50; display:inline-block; text-align:left; color:#1B5E20;">
-                    A seed is happy<br>
-                    when it becomes a root,<br>
-                    A root is happy<br>
-                    when it becomes a bud,<br>
-                    A bud is happy<br>
-                    when it becomes a stem, and<br>
-                    A stem is happy<br>
-                    when it becomes a flower.
+                    A seed is happy<br>when it becomes a root,<br>A root is happy<br>when it becomes a bud,<br>A bud is happy<br>when it becomes a stem, and<br>A stem is happy<br>when it becomes a flower.
                 </div>
             </div>
             <div class="activity-block">
-                <div class="activity-heading">📝 Make Similar Sentences</div>
-                <div class="activity-sub ml">സമാനമായ വാക്യങ്ങൾ ഉണ്ടാക്കുക.</div>
+                <div class="activity-heading">📝 Make similar sentences</div>
                 <p>1. A teacher becomes happy when <select class="fill-blank-select" data-ans="students learn well"><option value="">--</option><option value="students learn well">students learn well</option><option value="gets a toy">gets a toy</option></select>.</p>
                 <p>2. A kid becomes happy when he <select class="fill-blank-select" data-ans="gets a toy"><option value="">--</option><option value="family is safe">family is safe</option><option value="gets a toy">gets a toy</option></select>.</p>
                 <p>3. A father becomes happy when his <select class="fill-blank-select" data-ans="family is safe"><option value="">--</option><option value="family is safe">family is safe</option><option value="gets love">gets love</option></select>.</p>
+                <p>4. A farmer becomes happy when <select class="fill-blank-select" data-ans="the crops grow"><option value="">--</option><option value="the crops grow">the crops grow</option><option value="it rains stones">it rains stones</option></select>.</p>
                 <button class="check-btn" onclick="genericCheck('fill-blank-select','resR')">Check</button>
                 <div id="resR" class="result-msg"></div>
             </div>
+            <div class="activity-block">
+                <div class="activity-heading">✍️ Write two more happy lines</div>
+                <textarea class="textarea-custom" placeholder="A bird is happy when..."></textarea>
+                <button class="reveal-model-btn" onclick="toggleModel('rMore', this)">💡 Model Lines</button>
+                <div id="rMore" class="model-answer-box">A bird is happy when it sings in the tree.\\nA friend is happy when we share and care.</div>
+            </div>
+        `;
+    } else if(lessonId === 'rocky') {
+        body.innerHTML = `
+            <div class="activity-block" style="text-align:center;">
+                <div class="activity-heading">🎵 Kind Little Rocky</div>
+                <button class="read-all-btn" onclick="speakText('Rocky, Rocky, kind little pup. He helps his friends when they are down. Rain or wind, he does not stop. Kindness makes him wear a crown.')">▶️ Sing Along</button>
+                <div style="font-size:1.25rem; line-height:1.9; font-weight:bold; background:#FFF3E0; padding:20px; border-radius:15px;">
+                    Rocky, Rocky, kind little pup,<br>He helps his friends when they are down.<br>Rain or wind, he does not stop,<br>Kindness makes him wear a crown.
+                </div>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">📝 Rhyming words</div>
+                <p>1. pup - <select class="fill-blank-select" data-ans="up"><option value="">--</option><option value="up">up</option><option value="cat">cat</option></select></p>
+                <p>2. down - <select class="fill-blank-select" data-ans="crown"><option value="">--</option><option value="bone">bone</option><option value="crown">crown</option></select></p>
+                <p>3. stop - <select class="fill-blank-select" data-ans="drop"><option value="">--</option><option value="drop">drop</option><option value="tree">tree</option></select></p>
+                <button class="check-btn" onclick="genericCheck('fill-blank-select','resRhR')">Check</button>
+                <div id="resRhR" class="result-msg"></div>
+            </div>
         `;
     } else {
-        body.innerHTML = `<div class="activity-block"><div class="activity-heading">No rhyme for this section.</div></div>`;
+        body.innerHTML = `
+            <div class="activity-block" style="text-align:center;">
+                <div class="activity-heading">🎵 Sun and Wind</div>
+                <button class="read-all-btn" onclick="speakText('Blow, wind, blow. Shine, sun, shine. One uses force, one uses warmth. Together they live in harmony.')">▶️ Sing Along</button>
+                <div style="font-size:1.25rem; line-height:1.9; font-weight:bold; background:#E3F2FD; padding:20px; border-radius:15px;">
+                    Blow, wind, blow.<br>Shine, sun, shine.<br>One uses force, one uses warmth.<br>Together they live in harmony.
+                </div>
+            </div>
+            <div class="activity-block">
+                <div class="activity-heading">📝 Choose the rhyming word</div>
+                <p>1. shine - <select class="fill-blank-select" data-ans="fine"><option value="">--</option><option value="fine">fine</option><option value="cold">cold</option></select></p>
+                <p>2. blow - <select class="fill-blank-select" data-ans="glow"><option value="">--</option><option value="shirt">shirt</option><option value="glow">glow</option></select></p>
+                <button class="check-btn" onclick="genericCheck('fill-blank-select','resRhS')">Check</button>
+                <div id="resRhS" class="result-msg"></div>
+            </div>
+        `;
     }
 }
 
 function renderGrammar(body, lessonId) {
-    body.innerHTML = `
+    if(lessonId === 'rocky') {
+        body.innerHTML = `
         <div class="activity-block">
             <div class="activity-heading">📝 Action Words (Past Tense)</div>
-            <div class="activity-sub ml">പദങ്ങൾ ചേർത്ത് എഴുതുക. (e.g. bees - buzzed)</div>
+            <div class="activity-sub ml">ശരിയായ past tense തിരഞ്ഞെടുക്കുക.</div>
             <div style="display:flex; flex-direction:column; gap:10px; font-size:1.2rem; font-weight:bold;">
                 <div>1. snake - <select class="fill-blank-select" data-ans="hissed"><option value="">--</option><option value="hissed">hissed</option><option value="ticked">ticked</option></select></div>
                 <div>2. clock - <select class="fill-blank-select" data-ans="ticked"><option value="">--</option><option value="giggled">giggled</option><option value="ticked">ticked</option></select></div>
                 <div>3. baby - <select class="fill-blank-select" data-ans="giggled"><option value="">--</option><option value="giggled">giggled</option><option value="rustled">rustled</option></select></div>
                 <div>4. bells - <select class="fill-blank-select" data-ans="jingled"><option value="">--</option><option value="jingled">jingled</option><option value="hissed">hissed</option></select></div>
                 <div>5. leaves - <select class="fill-blank-select" data-ans="rustled"><option value="">--</option><option value="rustled">rustled</option><option value="ticked">ticked</option></select></div>
+                <div>6. Rocky - <select class="fill-blank-select" data-ans="saved"><option value="">--</option><option value="saved">saved</option><option value="saves">saves</option></select> the crow.</div>
+                <div>7. The crow - <select class="fill-blank-select" data-ans="snatched"><option value="">--</option><option value="snatch">snatch</option><option value="snatched">snatched</option></select> the bone.</div>
             </div>
             <button class="check-btn" onclick="genericCheck('fill-blank-select','resG')">Check Answers</button>
             <div id="resG" class="result-msg"></div>
         </div>
-    `;
+        <div class="activity-block">
+            <div class="activity-heading">📝 Naming words (Nouns)</div>
+            <p>Pick the naming word in: "The puppy chewed a bone."</p>
+            <p>The naming words are <select class="fill-blank-select" data-ans="puppy and bone"><option value="">--</option><option value="chewed">chewed</option><option value="puppy and bone">puppy and bone</option></select>.</p>
+            <button class="check-btn" onclick="genericCheck('fill-blank-select','resGn')">Check</button>
+            <div id="resGn" class="result-msg"></div>
+        </div>`;
+    } else if(lessonId === 'stronger') {
+        body.innerHTML = `
+        <div class="activity-block">
+            <div class="activity-heading">📝 Degrees / comparing</div>
+            <p>1. The sun is <select class="fill-blank-select" data-ans="stronger"><option value="">--</option><option value="strong">strong</option><option value="stronger">stronger</option></select> than the wind.</p>
+            <p>2. The wind is strong in its <select class="fill-blank-select" data-ans="own"><option value="">--</option><option value="own">own</option><option value="cold">cold</option></select> way.</p>
+            <p>3. The man felt <select class="fill-blank-select" data-ans="cold"><option value="">--</option><option value="cold">cold</option><option value="green">green</option></select> when the wind blew.</p>
+            <p>4. The man felt <select class="fill-blank-select" data-ans="hot"><option value="">--</option><option value="hot">hot</option><option value="wet">wet</option></select> when the sun blazed.</p>
+            <button class="check-btn" onclick="genericCheck('fill-blank-select','resGs')">Check</button>
+            <div id="resGs" class="result-msg"></div>
+        </div>
+        <div class="activity-block">
+            <div class="activity-heading">📝 Action words</div>
+            <p>The wind <select class="fill-blank-select" data-ans="blew"><option value="">--</option><option value="blew">blew</option><option value="blow">blow</option></select>.</p>
+            <p>The sun <select class="fill-blank-select" data-ans="shone"><option value="">--</option><option value="shine">shine</option><option value="shone">shone</option></select>.</p>
+            <button class="check-btn" onclick="genericCheck('fill-blank-select','resGa')">Check</button>
+            <div id="resGa" class="result-msg"></div>
+        </div>`;
+    } else {
+        body.innerHTML = `
+        <div class="activity-block">
+            <div class="activity-heading">📝 Becomes / grows</div>
+            <p>1. A seed becomes a <select class="fill-blank-select" data-ans="root"><option value="">--</option><option value="root">root</option><option value="moon">moon</option></select>.</p>
+            <p>2. A bud becomes a <select class="fill-blank-select" data-ans="stem"><option value="">--</option><option value="stem">stem</option><option value="bone">bone</option></select>.</p>
+            <p>3. A stem becomes a <select class="fill-blank-select" data-ans="flower"><option value="">--</option><option value="cloud">cloud</option><option value="flower">flower</option></select>.</p>
+            <button class="check-btn" onclick="genericCheck('fill-blank-select','resGh')">Check</button>
+            <div id="resGh" class="result-msg"></div>
+        </div>`;
+    }
+}
+
+function renderDiary(body, lessonId) {
+    const prompts = {
+        rocky: {title:"Rocky's Day", q:"Write a diary as Rocky after the rain.", model:"Dear Diary, Today I lost my bone. Then it rained. I saw little chicks shivering. I saved their mother. I feel happy. Kindness is better than a bone."},
+        stronger: {title:"A Strange Day", q:"Write a diary as the man who met the wind and the sun.", model:"Dear Diary, First I felt so cold. I held my shirt tight. Then the sun made me hot and I took it off. What a strange day! I learned that gentle warmth can be stronger than force."},
+        happiness: {title:"I am a Seed", q:"Write a diary as a little seed.", model:"Dear Diary, I am small today. I will grow into a root, a bud, a stem and a flower. Every little step makes me happy."}
+    };
+    const p = prompts[lessonId] || prompts.rocky;
+    body.innerHTML = `
+        <div class="activity-block">
+            <div class="activity-heading">📔 ${p.title}</div>
+            <div class="activity-sub ml">ഡയറി രൂപത്തിൽ എഴുതുക.</div>
+            <p>${p.q}</p>
+            <textarea class="textarea-custom" style="height:160px;" placeholder="Dear Diary,..."></textarea>
+            <button class="reveal-model-btn" onclick="toggleModel('diaryM', this)">💡 Model Diary</button>
+            <div id="diaryM" class="model-answer-box">${p.model}</div>
+        </div>
+        <div class="activity-block">
+            <div class="activity-heading">⭐ One happy line from today</div>
+            <textarea class="textarea-custom" placeholder="Today I felt happy when..."></textarea>
+            <button class="reveal-model-btn" onclick="toggleModel('diaryH', this)">💡 Model Line</button>
+            <div id="diaryH" class="model-answer-box">Today I felt happy when I helped a friend, just like Rocky helped the crow.</div>
+        </div>`;
+}
+
+function renderValues(body, lessonId) {
+    const data = {
+        rocky: {moral:"Help even those who were unkind. Kindness is strength.", q:"Why did Rocky help the crow?", a:"The crow had snatched his bone, but Rocky still helped. He felt pity for the chicks and the mother. Helping is more important than revenge."},
+        stronger: {moral:"Gentle ways can be stronger than force. Live in harmony.", q:"What do we learn from the Sun and the Wind?", a:"Force made the man hold the shirt tighter. Warmth made him take it off. Kind and gentle ways can win. We should live in harmony."},
+        happiness: {moral:"Grow step by step. Every small change can bring joy.", q:"What makes the seed happy?", a:"The seed is happy when it grows. Each stage — root, bud, stem, flower — is a happy step."}
+    };
+    const d = data[lessonId] || data.rocky;
+    body.innerHTML = `
+        <div class="activity-block">
+            <div class="activity-heading">💛 The moral of the lesson</div>
+            <p style="font-size:1.2rem;font-weight:800;color:#2E7D32;">${d.moral}</p>
+            <button class="read-all-btn" onclick="speakText('${d.moral.replace(/'/g,"\\'")}')">🔊 Hear the moral</button>
+        </div>
+        <div class="activity-block">
+            <div class="activity-heading">✍️ Think and write</div>
+            <p>${d.q}</p>
+            <textarea class="textarea-custom"></textarea>
+            <button class="reveal-model-btn" onclick="toggleModel('valA', this)">💡 Model Answer</button>
+            <div id="valA" class="model-answer-box">${d.a}</div>
+        </div>
+        <div class="activity-block">
+            <div class="activity-heading">🤝 I can be kind when...</div>
+            <textarea class="textarea-custom" placeholder="I can share my pencil / help a friend / ..."></textarea>
+            <button class="reveal-model-btn" onclick="toggleModel('valK', this)">💡 Model Answer</button>
+            <div id="valK" class="model-answer-box">I can be kind when I share my things, when I help a friend who falls, and when I speak gently even if I am angry.</div>
+        </div>`;
+}
+
+function renderListenFill(body, lessonId) {
+    const items = {
+        rocky: [
+            {play:"Rocky, the puppy was resting under a tree.", ans:"puppy", opts:["puppy","kitten","horse"]},
+            {play:"The crow snatched the bone and flew away.", ans:"bone", opts:["ball","bone","book"]},
+            {play:"Rocky saved the mother crow.", ans:"crow", opts:["cat","crow","king"]}
+        ],
+        stronger: [
+            {play:"The wind said, I can blow away anything.", ans:"wind", opts:["sun","wind","rain"]},
+            {play:"The sun started blazing.", ans:"sun", opts:["moon","sun","star"]},
+            {play:"They lived in harmony thereafter.", ans:"harmony", opts:["anger","harmony","fear"]}
+        ],
+        happiness: [
+            {play:"A seed is happy when it becomes a root.", ans:"root", opts:["rock","root","road"]},
+            {play:"A stem is happy when it becomes a flower.", ans:"flower", opts:["flower","cloud","bone"]}
+        ]
+    };
+    const list = items[lessonId] || items.rocky;
+    let h = `<div class="activity-block"><div class="activity-heading">👂 Listen and choose the missing word</div><div class="activity-sub ml">🔊 അമർത്തി കേട്ട് ശരിയായ വാക്ക് തിരഞ്ഞെടുക്കുക.</div>`;
+    list.forEach((it,i)=>{
+        const ops = it.opts.map(o=>`<option value="${o}">${o}</option>`).join('');
+        h += `<p>${i+1}. <button class="mini-play" style="width:auto;padding:4px 10px;border-radius:12px;" onclick="speakText(${JSON.stringify(it.play)})">🔊 Play</button>
+            I heard the word
+            <select class="fill-blank-select" data-ans="${it.ans}"><option value="">--</option>${ops}</select>.</p>`;
+    });
+    h += `<button class="check-btn" onclick="genericCheck('fill-blank-select','resL')">Check</button><div id="resL" class="result-msg"></div></div>`;
+    body.innerHTML = h;
+}
+
+function renderPictureTalk(body, lessonId) {
+    const scenes = {
+        rocky: [
+            {e:'🐶🌳', t:'Rocky under the tree', m:'Rocky is resting under a green tree. Bees buzz around his head. He looks sleepy and happy after a meal.'},
+            {e:'🐦🦴', t:'The naughty crow', m:'A hungry crow is flying down. She snatches the bone and flies away. Rocky looks surprised.'},
+            {e:'🌧️🐣', t:'Chicks in the rain', m:'The nest has fallen. Tiny chicks are wet and shivering. Rocky walks towards them to help.'}
+        ],
+        stronger: [
+            {e:'💨🚶', t:'Wind and the man', m:'The wind is blowing hard. The man holds his shirt. His face looks cold.'},
+            {e:'☀️😊', t:'Sun and the man', m:'The sun is blazing. The man smiles and takes off his shirt. He feels warm.'}
+        ],
+        happiness: [
+            {e:'🌱', t:'The seed', m:'A tiny seed is in the soil. It wants to grow.'},
+            {e:'🌸', t:'The flower', m:'A bright flower stands tall. It grew from a seed, step by step.'}
+        ]
+    };
+    const list = scenes[lessonId] || scenes.rocky;
+    body.innerHTML = list.map((s,i)=>`
+        <div class="activity-block">
+            <div class="activity-heading">🎨 ${s.t}</div>
+            <div class="scene-emoji">${s.e}</div>
+            <p class="ml">ചിത്രം കണ്ട് 3 വാക്യം എഴുതുക / പറയുക.</p>
+            <button class="mini-play" style="width:auto;padding:6px 12px;border-radius:12px;margin-bottom:8px;" onclick="speakText(${JSON.stringify(s.m)})">🔊 Hear a model</button>
+            <textarea class="textarea-custom" placeholder="I can see..."></textarea>
+            <button class="reveal-model-btn" onclick="toggleModel('pt${i}', this)">💡 Model Description</button>
+            <div id="pt${i}" class="model-answer-box">${s.m}</div>
+        </div>`).join('');
 }
 
 function renderQuiz(body, lessonId) {
